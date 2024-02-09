@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89CFBFE92B76B233004EB54B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFBFE82B76B233004EB54B /* AppDelegate.swift */; };
+		89CFBFEB2B76B233004EB54B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFBFEA2B76B233004EB54B /* SceneDelegate.swift */; };
+		89CFBFED2B76B233004EB54B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFBFEC2B76B233004EB54B /* ViewController.swift */; };
+		89CFBFF02B76B233004EB54B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CFBFEE2B76B233004EB54B /* Main.storyboard */; };
+		89CFBFF22B76B235004EB54B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89CFBFF12B76B235004EB54B /* Assets.xcassets */; };
+		89CFBFF52B76B235004EB54B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89CFBFF32B76B235004EB54B /* LaunchScreen.storyboard */; };
+		89CFC0002B76B235004EB54B /* empikTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFBFFF2B76B235004EB54B /* empikTests.swift */; };
+		89CFC00A2B76B235004EB54B /* empikUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFC0092B76B235004EB54B /* empikUITests.swift */; };
+		89CFC00C2B76B235004EB54B /* empikUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFC00B2B76B235004EB54B /* empikUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		89CFBFFC2B76B235004EB54B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CFBFDD2B76B233004EB54B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CFBFE42B76B233004EB54B;
+			remoteInfo = empik;
+		};
+		89CFC0062B76B235004EB54B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 89CFBFDD2B76B233004EB54B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 89CFBFE42B76B233004EB54B;
+			remoteInfo = empik;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		89CFBFE52B76B233004EB54B /* empik.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = empik.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CFBFE82B76B233004EB54B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		89CFBFEA2B76B233004EB54B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		89CFBFEC2B76B233004EB54B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		89CFBFEF2B76B233004EB54B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		89CFBFF12B76B235004EB54B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		89CFBFF42B76B235004EB54B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		89CFBFF62B76B235004EB54B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		89CFBFFB2B76B235004EB54B /* empikTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = empikTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CFBFFF2B76B235004EB54B /* empikTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empikTests.swift; sourceTree = "<group>"; };
+		89CFC0052B76B235004EB54B /* empikUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = empikUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		89CFC0092B76B235004EB54B /* empikUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empikUITests.swift; sourceTree = "<group>"; };
+		89CFC00B2B76B235004EB54B /* empikUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = empikUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		89CFBFE22B76B233004EB54B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CFBFF82B76B235004EB54B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CFC0022B76B235004EB54B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		89CFBFDC2B76B233004EB54B = {
+			isa = PBXGroup;
+			children = (
+				89CFBFE72B76B233004EB54B /* empik */,
+				89CFBFFE2B76B235004EB54B /* empikTests */,
+				89CFC0082B76B235004EB54B /* empikUITests */,
+				89CFBFE62B76B233004EB54B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		89CFBFE62B76B233004EB54B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				89CFBFE52B76B233004EB54B /* empik.app */,
+				89CFBFFB2B76B235004EB54B /* empikTests.xctest */,
+				89CFC0052B76B235004EB54B /* empikUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		89CFBFE72B76B233004EB54B /* empik */ = {
+			isa = PBXGroup;
+			children = (
+				89CFBFE82B76B233004EB54B /* AppDelegate.swift */,
+				89CFBFEA2B76B233004EB54B /* SceneDelegate.swift */,
+				89CFBFEC2B76B233004EB54B /* ViewController.swift */,
+				89CFBFEE2B76B233004EB54B /* Main.storyboard */,
+				89CFBFF12B76B235004EB54B /* Assets.xcassets */,
+				89CFBFF32B76B235004EB54B /* LaunchScreen.storyboard */,
+				89CFBFF62B76B235004EB54B /* Info.plist */,
+			);
+			path = empik;
+			sourceTree = "<group>";
+		};
+		89CFBFFE2B76B235004EB54B /* empikTests */ = {
+			isa = PBXGroup;
+			children = (
+				89CFBFFF2B76B235004EB54B /* empikTests.swift */,
+			);
+			path = empikTests;
+			sourceTree = "<group>";
+		};
+		89CFC0082B76B235004EB54B /* empikUITests */ = {
+			isa = PBXGroup;
+			children = (
+				89CFC0092B76B235004EB54B /* empikUITests.swift */,
+				89CFC00B2B76B235004EB54B /* empikUITestsLaunchTests.swift */,
+			);
+			path = empikUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		89CFBFE42B76B233004EB54B /* empik */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CFC00F2B76B235004EB54B /* Build configuration list for PBXNativeTarget "empik" */;
+			buildPhases = (
+				89CFBFE12B76B233004EB54B /* Sources */,
+				89CFBFE22B76B233004EB54B /* Frameworks */,
+				89CFBFE32B76B233004EB54B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = empik;
+			productName = empik;
+			productReference = 89CFBFE52B76B233004EB54B /* empik.app */;
+			productType = "com.apple.product-type.application";
+		};
+		89CFBFFA2B76B235004EB54B /* empikTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CFC0122B76B235004EB54B /* Build configuration list for PBXNativeTarget "empikTests" */;
+			buildPhases = (
+				89CFBFF72B76B235004EB54B /* Sources */,
+				89CFBFF82B76B235004EB54B /* Frameworks */,
+				89CFBFF92B76B235004EB54B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CFBFFD2B76B235004EB54B /* PBXTargetDependency */,
+			);
+			name = empikTests;
+			productName = empikTests;
+			productReference = 89CFBFFB2B76B235004EB54B /* empikTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		89CFC0042B76B235004EB54B /* empikUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 89CFC0152B76B235004EB54B /* Build configuration list for PBXNativeTarget "empikUITests" */;
+			buildPhases = (
+				89CFC0012B76B235004EB54B /* Sources */,
+				89CFC0022B76B235004EB54B /* Frameworks */,
+				89CFC0032B76B235004EB54B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				89CFC0072B76B235004EB54B /* PBXTargetDependency */,
+			);
+			name = empikUITests;
+			productName = empikUITests;
+			productReference = 89CFC0052B76B235004EB54B /* empikUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		89CFBFDD2B76B233004EB54B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					89CFBFE42B76B233004EB54B = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					89CFBFFA2B76B235004EB54B = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 89CFBFE42B76B233004EB54B;
+					};
+					89CFC0042B76B235004EB54B = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = 89CFBFE42B76B233004EB54B;
+					};
+				};
+			};
+			buildConfigurationList = 89CFBFE02B76B233004EB54B /* Build configuration list for PBXProject "empik" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 89CFBFDC2B76B233004EB54B;
+			productRefGroup = 89CFBFE62B76B233004EB54B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				89CFBFE42B76B233004EB54B /* empik */,
+				89CFBFFA2B76B235004EB54B /* empikTests */,
+				89CFC0042B76B235004EB54B /* empikUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		89CFBFE32B76B233004EB54B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CFBFF52B76B235004EB54B /* LaunchScreen.storyboard in Resources */,
+				89CFBFF22B76B235004EB54B /* Assets.xcassets in Resources */,
+				89CFBFF02B76B233004EB54B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CFBFF92B76B235004EB54B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CFC0032B76B235004EB54B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		89CFBFE12B76B233004EB54B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CFBFED2B76B233004EB54B /* ViewController.swift in Sources */,
+				89CFBFE92B76B233004EB54B /* AppDelegate.swift in Sources */,
+				89CFBFEB2B76B233004EB54B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CFBFF72B76B235004EB54B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CFC0002B76B235004EB54B /* empikTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		89CFC0012B76B235004EB54B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CFC00A2B76B235004EB54B /* empikUITests.swift in Sources */,
+				89CFC00C2B76B235004EB54B /* empikUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		89CFBFFD2B76B235004EB54B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CFBFE42B76B233004EB54B /* empik */;
+			targetProxy = 89CFBFFC2B76B235004EB54B /* PBXContainerItemProxy */;
+		};
+		89CFC0072B76B235004EB54B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 89CFBFE42B76B233004EB54B /* empik */;
+			targetProxy = 89CFC0062B76B235004EB54B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		89CFBFEE2B76B233004EB54B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CFBFEF2B76B233004EB54B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		89CFBFF32B76B235004EB54B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				89CFBFF42B76B235004EB54B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		89CFC00D2B76B235004EB54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		89CFC00E2B76B235004EB54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89CFC0102B76B235004EB54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UR7736LJY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = empik/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kudrynski.empik;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		89CFC0112B76B235004EB54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UR7736LJY;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = empik/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kudrynski.empik;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		89CFC0132B76B235004EB54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UR7736LJY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kudrynski.empikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/empik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/empik";
+			};
+			name = Debug;
+		};
+		89CFC0142B76B235004EB54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UR7736LJY;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kudrynski.empikTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/empik.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/empik";
+			};
+			name = Release;
+		};
+		89CFC0162B76B235004EB54B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UR7736LJY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kudrynski.empikUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = empik;
+			};
+			name = Debug;
+		};
+		89CFC0172B76B235004EB54B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UR7736LJY;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = kudrynski.empikUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = empik;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		89CFBFE02B76B233004EB54B /* Build configuration list for PBXProject "empik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CFC00D2B76B235004EB54B /* Debug */,
+				89CFC00E2B76B235004EB54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CFC00F2B76B235004EB54B /* Build configuration list for PBXNativeTarget "empik" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CFC0102B76B235004EB54B /* Debug */,
+				89CFC0112B76B235004EB54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CFC0122B76B235004EB54B /* Build configuration list for PBXNativeTarget "empikTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CFC0132B76B235004EB54B /* Debug */,
+				89CFC0142B76B235004EB54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		89CFC0152B76B235004EB54B /* Build configuration list for PBXNativeTarget "empikUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89CFC0162B76B235004EB54B /* Debug */,
+				89CFC0172B76B235004EB54B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 89CFBFDD2B76B233004EB54B /* Project object */;
+}
