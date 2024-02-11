@@ -11,18 +11,22 @@ import RxCocoa
 
 protocol CitySearchViewModelProtocol {
     func fetchCities(cityString: String) async
+    func navigateToForecastDetails(with city: City)
     
     var fetchedCities: Driver<[City]> { get }
     var fetchedCitiesError: Driver<String?> { get }
 }
 
-class CitySearchViewModel {
+final class CitySearchViewModel {
     private var fetchedCitiesSubject: BehaviorSubject<[City]> = .init(value: [])
     private var fetchedCitiesErrorSubject: BehaviorSubject<String?> = .init(value: nil)
     
+    let coordinator: ForecastCoordinatorProtocol
     let networkingManager: NetworkingManagerProtocol
     
-    init(networkingManager: NetworkingManagerProtocol) {
+    init(coordinator: ForecastCoordinatorProtocol,
+         networkingManager: NetworkingManagerProtocol) {
+        self.coordinator = coordinator
         self.networkingManager = networkingManager
     }
 }
@@ -43,6 +47,9 @@ extension CitySearchViewModel: CitySearchViewModelProtocol {
         } catch {
             fetchedCitiesErrorSubject.onNext(error.localizedDescription)
         }
-        
+    }
+    
+    func navigateToForecastDetails(with city: City) {
+        coordinator.navigateToForecastDetails(with: city)
     }
 }

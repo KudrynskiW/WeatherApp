@@ -6,8 +6,15 @@
 //
 
 struct WeatherDetails: Codable {
+    /// Weather condition id.
     let id: Int
+    
+    /// Group of weather parameters (Rain, Snow, Clouds etc.).
     let main: String
+    
+    /// Weather condition within the group.
     let description: String
+    
+    /// Weather icon id.
     let icon: String
 }

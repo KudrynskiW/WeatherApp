@@ -6,7 +6,12 @@
 //
 
 struct WindDetails: Codable {
+    /// Wind speed. Metric: meter/sec.
     let speed: Float
+    
+    /// Wind direction, degrees (meteorological).
     let deg: Int
+    
+    /// Wind gust. Metric: meter/sec.
     let gust: Float
 }

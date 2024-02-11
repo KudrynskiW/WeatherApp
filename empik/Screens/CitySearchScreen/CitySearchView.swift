@@ -28,6 +28,7 @@ class CitySearchView: UIViewController {
     
     lazy var emptyView: EmptyView = {
         let emptyView = EmptyView()
+        
         return emptyView
     }()
     
@@ -51,6 +52,19 @@ class CitySearchView: UIViewController {
         
         setupViews()
         bindData()
+    }
+    
+    func bindData() {
+        viewModel?.fetchedCities
+            .drive(with: self, onNext: { owner, cities in
+                if let searchBarText = owner.searchBar.text, !searchBarText.isEmpty, cities.isEmpty {
+                    owner.emptyView.mode = .noResults
+                }
+                owner.emptyView.isHidden = !cities.isEmpty
+                owner.cities = cities
+                
+                owner.tableView.reloadData()
+            }).disposed(by: disposeBag)
     }
     
     private func setupViews() {
@@ -95,15 +109,5 @@ class CitySearchView: UIViewController {
             emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             emptyView.heightAnchor.constraint(equalToConstant: 300)
         ])
-    }
-    
-    func bindData() {
-        viewModel?.fetchedCities
-            .drive(with: self, onNext: { owner, cities in
-                owner.emptyView.isHidden = !cities.isEmpty
-                owner.cities = cities
-                
-                owner.tableView.reloadData()
-            }).disposed(by: disposeBag)
     }
 }

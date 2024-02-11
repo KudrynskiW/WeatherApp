@@ -11,6 +11,7 @@ extension CitySearchView: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard !searchText.isEmpty else {
             emptyView.isHidden = false
+            emptyView.mode = .provideName
             cities = []
             tableView.reloadData()
             return

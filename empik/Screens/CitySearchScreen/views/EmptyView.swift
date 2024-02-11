@@ -8,20 +8,33 @@
 import UIKit
 
 class EmptyView: UIView {
+    enum Mode: String {
+        case provideName = "Please provide city name."
+        case noResults = "No results found."
+    }
+    
     lazy var emptyImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "aqi.high")
         imageView.tintColor = .black
+        
         return imageView
     }()
     
     lazy var emptyLabel: UILabel = {
         let label = UILabel()
-        label.text = "No Results"
+        label.text = mode.rawValue
         label.font = .systemFont(ofSize: 18)
         label.textAlignment = .center
+        
         return label
     }()
+    
+    var mode: Mode = .provideName {
+        didSet {
+            emptyLabel.text = mode.rawValue
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

@@ -6,5 +6,10 @@
 //
 
 struct SysDetails: Codable {
-    let pod: String
+    enum PartOfDay: String, Codable {
+        case night = "n"
+        case day = "d"
+    }
+    /// Part of the day (n - night, d - day).
+    let pod: PartOfDay
 }

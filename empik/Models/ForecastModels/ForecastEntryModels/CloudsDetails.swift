@@ -6,5 +6,6 @@
 //
 
 struct CloudsDetails: Codable {
+    /// Cloudiness, %.
     let all: Int
 }

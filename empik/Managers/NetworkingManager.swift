@@ -20,6 +20,7 @@ enum NetworkingManagerError: Error {
 }
 
 class NetworkingManager: NetworkingManagerProtocol {
+    static let shared = NetworkingManager()
     var apiKey: String?
     
     init() {
@@ -55,15 +56,16 @@ class NetworkingManager: NetworkingManagerProtocol {
     
     func fetchWeatherDetailsForCity(cityLat: Double, cityLong: Double) async throws -> ForecastResponse {
         guard let apiKey else { throw NetworkingManagerError.wrongAPIKey }
-    
+        
         return try await withCheckedThrowingContinuation { continuation in
-            AF.request("https://api.openweathermap.org/data/2.5/weather?lat=\(cityLat)&lon=\(cityLong)&appid=\(apiKey)").responseData { response in
+            AF.request("https://api.openweathermap.org/data/2.5/forecast?lat=\(cityLat)&lon=\(cityLong)&units=metric&appid=\(apiKey)").responseData { response in
                 switch response.result {
                 case .success(let data):
                     do {
                         let decodedData = try JSONDecoder().decode(ForecastResponse.self, from: data)
                         continuation.resume(with: .success(decodedData))
                     } catch {
+                        print(error.localizedDescription)
                         continuation.resume(throwing: NetworkingManagerError.decodingError)
                     }
                 case .failure(let err):

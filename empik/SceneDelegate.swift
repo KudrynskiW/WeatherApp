@@ -19,12 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let networkingManager = NetworkingManager()
-        let viewModel = CitySearchViewModel(networkingManager: networkingManager)
-        let viewController = CitySearchView(viewModel: viewModel)
-        window.rootViewController = viewController
+        let navigationController = UINavigationController()
+        window.rootViewController = navigationController
         self.window = window
         window.makeKeyAndVisible()
+        
+        let coordinator = ForecastCoordinator(navigationController: navigationController,
+                                              componentsFactory: ForecastCoordinatorComponentsFactory())
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
