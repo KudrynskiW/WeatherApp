@@ -16,7 +16,7 @@ class EmptyView: UIView {
     lazy var emptyImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "aqi.high")
-        imageView.tintColor = .black
+        imageView.tintColor = .empSecondaryText
         
         return imageView
     }()
@@ -26,6 +26,7 @@ class EmptyView: UIView {
         label.text = mode.rawValue
         label.font = .systemFont(ofSize: 18)
         label.textAlignment = .center
+        label.textColor = .empSecondaryText
         
         return label
     }()

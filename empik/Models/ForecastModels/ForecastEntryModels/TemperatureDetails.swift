@@ -29,7 +29,4 @@ struct TemperatureDetails: Codable {
     
     /// Humidity, %.
     let humidity: Int
-    
-    /// Internal API parameter.
-    let temp_kf: Float
 }

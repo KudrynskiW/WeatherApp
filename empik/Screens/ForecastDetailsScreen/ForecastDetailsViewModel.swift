@@ -9,8 +9,9 @@ import RxSwift
 import RxCocoa
 
 protocol ForecastDetailsViewModelProtocol {
-    var forecastResponse: Driver<ForecastResponse?> { get }
+    var cityDetails: Driver<ForecastCity?> { get }
     var forecastResponseError: Driver<String?> { get }
+    var forecastEntryList: Driver<[String: [ForecastEntry]]> { get }
 }
 
 final class ForecastDetailsViewModel {
@@ -18,9 +19,12 @@ final class ForecastDetailsViewModel {
     let networkingManager: NetworkingManagerProtocol
     
     let forecastResponseSubject: BehaviorSubject<ForecastResponse?> = .init(value: nil)
+    var forecastResponse: Driver<ForecastResponse?> {
+        forecastResponseSubject.asDriver(onErrorJustReturn: nil)
+    }
     let forecastResponseErrorSubject: BehaviorSubject<String?> = .init(value: nil)
     let cityDetailsSubject: BehaviorSubject<ForecastCity?> = .init(value: nil)
-    let forecastEntryListSubject: BehaviorSubject<[ForecastEntry]> = .init(value: [])
+    let forecastEntryListSubject: BehaviorSubject<[String: [ForecastEntry]]> = .init(value: [:])
     
     let city: City
     let disposeBag = DisposeBag()
@@ -43,10 +47,20 @@ final class ForecastDetailsViewModel {
         forecastResponse.drive(with: self) { owner, response in
             guard let response else { return }
             owner.cityDetailsSubject.onNext(response.city)
-            owner.forecastEntryListSubject.onNext(response.list)
-            print(response.city)
             
-        }.disposed(by: disposeBag)
+            var dateCollection: [String: [ForecastEntry]] = [:]
+            response.list.forEach { entry in
+                if let alreadyPresentValue = dateCollection[entry.dt.formatUTCDateMinimalDate()] {
+                    dateCollection[entry.dt.formatUTCDateMinimalDate()] = alreadyPresentValue + [entry]
+                } else {
+                    dateCollection[entry.dt.formatUTCDateMinimalDate()] = [entry]
+                }
+            }
+            
+            owner.forecastEntryListSubject.onNext(dateCollection)
+            
+        }
+        .disposed(by: disposeBag)
     }
     
     private func fetchForecastDetails() async {
@@ -60,11 +74,15 @@ final class ForecastDetailsViewModel {
 }
 
 extension ForecastDetailsViewModel: ForecastDetailsViewModelProtocol {
-    var forecastResponse: Driver<ForecastResponse?> {
-        forecastResponseSubject.asDriver(onErrorJustReturn: nil)
+    var cityDetails: Driver<ForecastCity?> {
+        cityDetailsSubject.asDriver(onErrorJustReturn: nil)
     }
     
     var forecastResponseError: Driver<String?> {
         forecastResponseErrorSubject.asDriver(onErrorJustReturn: nil)
+    }
+    
+    var forecastEntryList: Driver<[String: [ForecastEntry]]> {
+        forecastEntryListSubject.asDriver(onErrorJustReturn: [:])
     }
 }

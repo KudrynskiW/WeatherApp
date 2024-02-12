@@ -11,6 +11,7 @@ import RxSwift
 class CitySearchView: UIViewController {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.separatorInset = .zero
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -42,9 +43,8 @@ class CitySearchView: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    public required init?(coder aDecoder: NSCoder) {
-        self.viewModel = nil
-        super.init(coder: aDecoder)
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func viewDidLoad() {
@@ -68,7 +68,9 @@ class CitySearchView: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = .white
+        title = "Weather app"
+        navigationController?.navigationBar.backgroundColor = .empBackground
+        view.backgroundColor = .empBackground
         
         setupSearchBar()
         setupTableView()
@@ -91,7 +93,7 @@ class CitySearchView: UIViewController {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: -1),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
