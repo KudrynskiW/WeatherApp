@@ -69,6 +69,7 @@ class CitySearchView: UIViewController {
     
     private func setupViews() {
         title = "Weather app"
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.empText] 
         navigationController?.navigationBar.backgroundColor = .empBackground
         view.backgroundColor = .empBackground
         

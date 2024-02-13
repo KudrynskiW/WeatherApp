@@ -66,7 +66,7 @@ class CityDetailsCell: UITableViewCell {
             mapView.topAnchor.constraint(equalTo: topAnchor),
             mapView.leadingAnchor.constraint(equalTo: leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            mapView.heightAnchor.constraint(equalToConstant: 150)
+            mapView.heightAnchor.constraint(equalToConstant: 250)
         ])
     }
     

@@ -42,11 +42,51 @@ class ForecastEntryCell: UITableViewCell {
     }
     
     func setupCell(date: String, forecastEntries: [ForecastEntry]) {
+        
         let forecastEntry = forecastEntries.first!
-        let minMaxString = "(Min: \(Int(forecastEntry.main.temp_min))°C | Max: \(Int(forecastEntry.main.temp_max))°C)"
+        let minMaxAttrString: NSMutableAttributedString = NSMutableAttributedString(string: "(Min: ")
+        let (minTemp, maxTemp) = returnMinAndMaxTemp(from: forecastEntries)
+        minMaxAttrString.append(prepareTemperatureString(temperature: minTemp))
+        minMaxAttrString.append(.init(string: " | Max: "))
+        minMaxAttrString.append(prepareTemperatureString(temperature: maxTemp))
+        minMaxAttrString.append(.init(string: ")"))
+        
         dateLabel.text = date
-        temperatureLabel.text = "\(Int(forecastEntry.main.temp))°C"
-        averageTemperatireLabel.text = minMaxString
+        temperatureLabel.attributedText = prepareTemperatureString(temperature: Int(forecastEntry.main.temp))
+        averageTemperatireLabel.attributedText = minMaxAttrString
+    }
+    
+    private func prepareTemperatureString(temperature: Int) -> NSAttributedString {
+        var fontColor: UIColor
+        
+        switch temperature {
+        case Int.min..<10:
+            fontColor = .blue
+        case 10...20:
+            fontColor = .black
+        case 21...Int.max:
+            fontColor = .red
+        default:
+            fontColor = .clear
+        }
+        
+        return NSAttributedString(string: "\(temperature)°C", attributes: [NSAttributedString.Key.foregroundColor : fontColor])
+    }
+    
+    /// Data from api is not reliable, i will prepare my own
+    private func returnMinAndMaxTemp(from entries: [ForecastEntry]) -> (Int, Int) {
+        var minTemp = Int.max
+        var maxTemp = Int.min
+        
+        entries.forEach { entry in
+            minTemp = Int(entry.main.temp) < minTemp ? Int(entry.main.temp) : minTemp
+            minTemp = Int(entry.main.temp_min) < minTemp ? Int(entry.main.temp_min) : minTemp
+            
+            maxTemp = Int(entry.main.temp) > maxTemp ? Int(entry.main.temp) : maxTemp
+            maxTemp = Int(entry.main.temp_max) > maxTemp ? Int(entry.main.temp_max) : maxTemp
+        }
+        
+        return (minTemp, maxTemp)
     }
     
     private func setupView() {
