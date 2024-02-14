@@ -11,10 +11,13 @@ import RxCocoa
 
 protocol CitySearchViewModelProtocol {
     func fetchCities(cityString: String) async
+    func getHistoryCities() -> [City]
     func navigateToForecastDetails(with city: City)
     
     var fetchedCities: Driver<[City]> { get }
     var fetchedCitiesError: Driver<String?> { get }
+    
+    var coordinator: ForecastCoordinatorProtocol { get }
 }
 
 final class CitySearchViewModel {
@@ -23,11 +26,18 @@ final class CitySearchViewModel {
     
     let coordinator: ForecastCoordinatorProtocol
     let networkingManager: NetworkingManagerProtocol
+    let storageManager: StorageManagerProtocol
     
     init(coordinator: ForecastCoordinatorProtocol,
-         networkingManager: NetworkingManagerProtocol) {
+         networkingManager: NetworkingManagerProtocol,
+         storageManager: StorageManagerProtocol) {
         self.coordinator = coordinator
         self.networkingManager = networkingManager
+        self.storageManager = storageManager
+    }
+    
+    private func saveHistoryCity(city: City) {
+        storageManager.saveCity(city: city)
     }
 }
 
@@ -49,7 +59,12 @@ extension CitySearchViewModel: CitySearchViewModelProtocol {
         }
     }
     
+    func getHistoryCities() -> [City] {
+        storageManager.loadCities()
+    }
+    
     func navigateToForecastDetails(with city: City) {
+        saveHistoryCity(city: city)
         coordinator.navigateToForecastDetails(with: city)
     }
 }

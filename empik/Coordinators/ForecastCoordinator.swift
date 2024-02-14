@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol ForecastCoordinatorProtocol {
+protocol ForecastCoordinatorProtocol: AnyObject {
     func navigateToForecastDetails(with city: City)
 }
 

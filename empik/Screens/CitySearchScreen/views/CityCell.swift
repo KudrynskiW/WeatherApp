@@ -8,14 +8,22 @@
 import UIKit
 
 class CityCell: UITableViewCell {
+    private enum Constants {
+        static let standardMargin: CGFloat = 16
+    }
+    
     lazy var nameLabel: UILabel = {
         let nameLabel = UILabel()
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         nameLabel.font = .systemFont(ofSize: 16, weight: .medium)
         return nameLabel
     }()
     
     lazy var detailsLabel: UILabel = {
         let detailsLabel = UILabel()
+        detailsLabel.translatesAutoresizingMaskIntoConstraints = false
+        
         detailsLabel.font = .systemFont(ofSize: 12, weight: .thin)
         return detailsLabel
     }()
@@ -38,24 +46,22 @@ class CityCell: UITableViewCell {
     
     private func setupNameLabelView() {
         contentView.addSubview(nameLabel)
-        nameLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
-            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16)
+            nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: Constants.standardMargin),
+            nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.standardMargin),
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.standardMargin)
         ])
     }
     
     private func setupDetailsLabelView() {
         contentView.addSubview(detailsLabel)
-        detailsLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             detailsLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
-            detailsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            detailsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 16),
-            detailsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16)
+            detailsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: Constants.standardMargin),
+            detailsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: Constants.standardMargin),
+            detailsLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -Constants.standardMargin)
         ])
     }
 }

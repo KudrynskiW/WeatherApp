@@ -9,32 +9,37 @@ import UIKit
 
 class ForecastEntryCell: UITableViewCell {
     private enum Constants {
-        static let horizontalMargin: CGFloat = 16
+        static let standardMargin: CGFloat = 16
     }
     
     lazy var dateLabel: UILabel = {
-        let label = UILabel()
+        let dateLabel = UILabel()
+        dateLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        return label
+        return dateLabel
     }()
     
     lazy var temperatureLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        return label
+        let temperatureLabel = UILabel()
+        temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
+        temperatureLabel.textAlignment = .center
+        
+        return temperatureLabel
     }()
     
     lazy var averageTemperatireLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
+        let averageTemperatireLabel = UILabel()
+        averageTemperatireLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        return label
+        averageTemperatireLabel.textAlignment = .right
+        
+        return averageTemperatireLabel
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        setupView()
+        setupViews()
     }
     
     required init?(coder: NSCoder) {
@@ -89,7 +94,7 @@ class ForecastEntryCell: UITableViewCell {
         return (minTemp, maxTemp)
     }
     
-    private func setupView() {
+    private func setupViews() {
         setupDateLabel()
         setupTemperatureLabel()
         setupAverageTemperatureLabel()
@@ -98,11 +103,10 @@ class ForecastEntryCell: UITableViewCell {
     private func setupDateLabel() {
         addSubview(dateLabel)
         
-        dateLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.horizontalMargin),
-            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.horizontalMargin),
-            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.horizontalMargin),
+            dateLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.standardMargin),
+            dateLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.standardMargin),
+            dateLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.standardMargin),
             dateLabel.widthAnchor.constraint(equalToConstant: 50)
         ])
     }
@@ -110,23 +114,21 @@ class ForecastEntryCell: UITableViewCell {
     private func setupTemperatureLabel() {
         addSubview(temperatureLabel)
         
-        temperatureLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            temperatureLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.horizontalMargin),
-            temperatureLabel.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor, constant: Constants.horizontalMargin),
-            temperatureLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.horizontalMargin)
+            temperatureLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.standardMargin),
+            temperatureLabel.leadingAnchor.constraint(equalTo: dateLabel.trailingAnchor, constant: Constants.standardMargin),
+            temperatureLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.standardMargin)
         ])
     }
     
     private func setupAverageTemperatureLabel() {
         addSubview(averageTemperatireLabel)
         
-        averageTemperatireLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            averageTemperatireLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            averageTemperatireLabel.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: Constants.horizontalMargin),
-            averageTemperatireLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.horizontalMargin),
-            averageTemperatireLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.horizontalMargin)
+            averageTemperatireLabel.topAnchor.constraint(equalTo: topAnchor, constant: Constants.standardMargin),
+            averageTemperatireLabel.leadingAnchor.constraint(equalTo: temperatureLabel.trailingAnchor, constant: Constants.standardMargin),
+            averageTemperatireLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.standardMargin),
+            averageTemperatireLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.standardMargin)
         ])
     }
 }

@@ -9,19 +9,26 @@ import UIKit
 import RxSwift
 
 class CitySearchView: UIViewController {
+    enum Constants {
+        static let title = "Weather app"
+        static let cityCellReuseIdentifier = "CityCell"
+    }
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.separatorInset = .zero
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.register(CityCell.self, forCellReuseIdentifier: "CityCell")
+        tableView.register(CityCell.self, forCellReuseIdentifier: Constants.cityCellReuseIdentifier)
         
         return tableView
     }()
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
         searchBar.delegate = self
         
         return searchBar
@@ -29,8 +36,15 @@ class CitySearchView: UIViewController {
     
     lazy var emptyView: EmptyView = {
         let emptyView = EmptyView()
+        emptyView.translatesAutoresizingMaskIntoConstraints = false
         
         return emptyView
+    }()
+    
+    lazy var searchHistoryView: SearchHistoryView = {
+        let searchHistoryView = SearchHistoryView()
+        searchHistoryView.translatesAutoresizingMaskIntoConstraints = false
+        return searchHistoryView
     }()
     
     let viewModel: CitySearchViewModelProtocol?
@@ -54,6 +68,12 @@ class CitySearchView: UIViewController {
         bindData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        loadHistoryTickets()
+    }
+    
     func bindData() {
         viewModel?.fetchedCities
             .drive(with: self, onNext: { owner, cities in
@@ -68,7 +88,7 @@ class CitySearchView: UIViewController {
     }
     
     private func setupViews() {
-        title = "Weather app"
+        title = Constants.title
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.empText] 
         navigationController?.navigationBar.backgroundColor = .empBackground
         view.backgroundColor = .empBackground
@@ -76,12 +96,12 @@ class CitySearchView: UIViewController {
         setupSearchBar()
         setupTableView()
         setupEmptyView()
+        setupHistoryView()
     }
     
     private func setupSearchBar() {
         view.addSubview(searchBar)
         
-        searchBar.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -92,7 +112,6 @@ class CitySearchView: UIViewController {
     private func setupTableView() {
         view.addSubview(tableView)
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: -1),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
@@ -104,7 +123,6 @@ class CitySearchView: UIViewController {
     private func setupEmptyView() {
         view.addSubview(emptyView)
         
-        emptyView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             emptyView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             emptyView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -112,5 +130,32 @@ class CitySearchView: UIViewController {
             emptyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             emptyView.heightAnchor.constraint(equalToConstant: 300)
         ])
+    }
+    
+    private func setupHistoryView() {
+        view.addSubview(searchHistoryView)
+        
+        NSLayoutConstraint.activate([
+            searchHistoryView.topAnchor.constraint(equalTo: searchBar.bottomAnchor),
+            searchHistoryView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            searchHistoryView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            searchHistoryView.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    func loadHistoryTickets() {
+        searchHistoryView.clearHistory()
+        
+        if let historyCities = viewModel?.getHistoryCities().reversed() {
+            guard cities.isEmpty && !historyCities.isEmpty else {
+                searchHistoryView.isHidden = true
+                return
+            }
+            
+            searchHistoryView.isHidden = false
+            for city in historyCities {
+                searchHistoryView.addHistoryEntry(coordinator: viewModel?.coordinator, city: city)
+            }
+        }
     }
 }

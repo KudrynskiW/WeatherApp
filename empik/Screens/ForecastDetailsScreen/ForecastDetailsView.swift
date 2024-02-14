@@ -9,13 +9,20 @@ import UIKit
 import RxSwift
 
 class ForecastDetailsView: UIViewController {
+    enum Constants {
+        static let cityDetailsCellReuseIdentifier = "CityDetailsCell"
+        static let forecastEntryCellReuseIdentifier = "ForecastEntryCell"
+    }
+    
     lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
         tableView.separatorInset = .zero
         tableView.allowsSelection = false
         tableView.dataSource = self
-        tableView.register(CityDetailsCell.self, forCellReuseIdentifier: "CityDetailsCell")
-        tableView.register(ForecastEntryCell.self, forCellReuseIdentifier: "ForecastEntryCell")
+        tableView.register(CityDetailsCell.self, forCellReuseIdentifier: Constants.cityDetailsCellReuseIdentifier)
+        tableView.register(ForecastEntryCell.self, forCellReuseIdentifier: Constants.forecastEntryCellReuseIdentifier)
         
         return tableView
     }()
@@ -70,13 +77,11 @@ class ForecastDetailsView: UIViewController {
     private func setupTableView() {
         view.addSubview(tableView)
         
-        tableView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
-        
     }
 }

@@ -13,7 +13,7 @@ extension CitySearchView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CityCell", for: indexPath) as? CityCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cityCellReuseIdentifier, for: indexPath) as? CityCell
         
         cell?.setup(with: cities[indexPath.row])
         

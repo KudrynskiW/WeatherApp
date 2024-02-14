@@ -19,12 +19,13 @@ final class ForecastDetailsViewModel {
     let networkingManager: NetworkingManagerProtocol
     
     let forecastResponseSubject: BehaviorSubject<ForecastResponse?> = .init(value: nil)
-    var forecastResponse: Driver<ForecastResponse?> {
-        forecastResponseSubject.asDriver(onErrorJustReturn: nil)
-    }
     let forecastResponseErrorSubject: BehaviorSubject<String?> = .init(value: nil)
     let cityDetailsSubject: BehaviorSubject<ForecastCity?> = .init(value: nil)
     let forecastEntryListSubject: BehaviorSubject<[String: [ForecastEntry]]> = .init(value: [:])
+    
+    var forecastResponse: Driver<ForecastResponse?> {
+        forecastResponseSubject.asDriver(onErrorJustReturn: nil)
+    }
     
     let city: City
     let disposeBag = DisposeBag()

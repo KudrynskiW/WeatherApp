@@ -20,6 +20,21 @@ enum NetworkingManagerError: Error {
 }
 
 class NetworkingManager: NetworkingManagerProtocol {
+    private enum Constants {
+        enum Parameters {
+            static let cityString = "q"
+            static let cityListingLimit = "limit"
+            static let appId = "appId"
+            static let units = "units"
+            static let latitude = "lat"
+            static let longitude = "lon"
+        }
+        
+        static let unitsParameterValue = "metric"
+        static let cityListingLimitParameterValue = 5
+        static let baseURLString = "https://api.openweathermap.org"
+    }
+    
     static let shared = NetworkingManager()
     var apiKey: String?
     
@@ -38,7 +53,13 @@ class NetworkingManager: NetworkingManagerProtocol {
         guard let apiKey else { throw NetworkingManagerError.wrongAPIKey }
         
         return try await withCheckedThrowingContinuation { continuation in
-            AF.request("https://api.openweathermap.org/geo/1.0/direct?q=\(cityString)&limit=5&appid=\(apiKey)").responseData { response in
+            let parameters: Parameters = [
+                Constants.Parameters.cityString: cityString,
+                Constants.Parameters.cityListingLimit: Constants.cityListingLimitParameterValue,
+                Constants.Parameters.appId: apiKey,
+            ]
+            
+            AF.request(Constants.baseURLString + "/geo/1.0/direct", parameters: parameters).responseData { response in
                 switch response.result {
                 case .success(let data):
                     do {
@@ -58,7 +79,14 @@ class NetworkingManager: NetworkingManagerProtocol {
         guard let apiKey else { throw NetworkingManagerError.wrongAPIKey }
         
         return try await withCheckedThrowingContinuation { continuation in
-            AF.request("https://api.openweathermap.org/data/2.5/forecast?lat=\(cityLat)&lon=\(cityLong)&units=metric&appid=\(apiKey)").responseData { response in
+            let parameters: Parameters = [
+                Constants.Parameters.latitude: cityLat,
+                Constants.Parameters.longitude: cityLong,
+                Constants.Parameters.units: Constants.unitsParameterValue,
+                Constants.Parameters.appId: apiKey,
+            ]
+            
+            AF.request(Constants.baseURLString + "/data/2.5/forecast", parameters: parameters).responseData { response in
                 switch response.result {
                 case .success(let data):
                     do {

@@ -20,7 +20,8 @@ extension ForecastCoordinatorComponentsFactory: ForecastCoordinatorComponentsFac
     func prepareCitySearchView(with coordinator: ForecastCoordinatorProtocol) -> UIViewController {
         let networkingManager = NetworkingManager.shared
         let viewModel = CitySearchViewModel(coordinator: coordinator,
-                                            networkingManager: networkingManager)
+                                            networkingManager: networkingManager, 
+                                            storageManager: StorageManager.shared)
         
         return CitySearchView(viewModel: viewModel)
     }

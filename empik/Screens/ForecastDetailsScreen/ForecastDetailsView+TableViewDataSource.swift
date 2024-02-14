@@ -16,7 +16,7 @@ extension ForecastDetailsView: UITableViewDataSource {
         let cell = UITableViewCell()
         switch indexPath.row {
         case 0:
-            let cityDetailsCell = tableView.dequeueReusableCell(withIdentifier: "CityDetailsCell", for: indexPath) as? CityDetailsCell
+            let cityDetailsCell = tableView.dequeueReusableCell(withIdentifier: Constants.cityDetailsCellReuseIdentifier, for: indexPath) as? CityDetailsCell
             
             if let forecastCity {
                 cityDetailsCell?.setupCell(with: forecastCity)
@@ -24,7 +24,7 @@ extension ForecastDetailsView: UITableViewDataSource {
             
             return cityDetailsCell ?? cell
         case 1...forecastEntries.map({ $0.0 }).count:
-            let forecastEntryCell = tableView.dequeueReusableCell(withIdentifier: "ForecastEntryCell", for: indexPath) as? ForecastEntryCell
+            let forecastEntryCell = tableView.dequeueReusableCell(withIdentifier: Constants.forecastEntryCellReuseIdentifier, for: indexPath) as? ForecastEntryCell
             
             let keys = forecastEntries.map({ $0.0 })
             let selectedKey = keys[indexPath.row-1]

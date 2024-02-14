@@ -15,6 +15,8 @@ class EmptyView: UIView {
     
     lazy var emptyImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        
         imageView.image = UIImage(systemName: "aqi.high")
         imageView.tintColor = .empBackground
         
@@ -23,6 +25,8 @@ class EmptyView: UIView {
     
     lazy var emptyLabel: UILabel = {
         let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
         label.text = mode.rawValue
         label.font = .systemFont(ofSize: 18)
         label.textAlignment = .center
@@ -51,8 +55,6 @@ class EmptyView: UIView {
         addSubview(emptyImageView)
         addSubview(emptyLabel)
         
-        emptyImageView.translatesAutoresizingMaskIntoConstraints = false
-        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             emptyImageView.topAnchor.constraint(equalTo: topAnchor),
             emptyImageView.centerXAnchor.constraint(equalTo: centerXAnchor),

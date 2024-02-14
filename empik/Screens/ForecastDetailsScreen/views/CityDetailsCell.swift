@@ -10,25 +10,32 @@ import MapKit
 
 class CityDetailsCell: UITableViewCell {
     private enum Constants {
-        static let horizontalMargin: CGFloat = 16
+        static let standardMargin: CGFloat = 16
     }
     
     lazy var mapView: MKMapView = {
         let mapView = MKMapView()
+        mapView.translatesAutoresizingMaskIntoConstraints = false
+        
         mapView.isUserInteractionEnabled = false
+        
         return mapView
     }()
     
     lazy var populationLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .right
-        return label
+        let populationLabel = UILabel()
+        populationLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        populationLabel.textAlignment = .right
+        
+        return populationLabel
     }()
     
     lazy var sunLabel: UILabel = {
-        let label = UILabel()
+        let sunLabel = UILabel()
+        sunLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        return label
+        return sunLabel
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -61,7 +68,6 @@ class CityDetailsCell: UITableViewCell {
     private func setupMapView() {
         addSubview(mapView)
         
-        mapView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             mapView.topAnchor.constraint(equalTo: topAnchor),
             mapView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -73,22 +79,20 @@ class CityDetailsCell: UITableViewCell {
     private func setupSunLabel() {
         addSubview(sunLabel)
         
-        sunLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            sunLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: Constants.horizontalMargin),
-            sunLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.horizontalMargin)
+            sunLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: Constants.standardMargin),
+            sunLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: Constants.standardMargin)
         ])
     }
     
     private func setupPopulatonLabel() {
         addSubview(populationLabel)
         
-        populationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            populationLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: Constants.horizontalMargin),
+            populationLabel.topAnchor.constraint(equalTo: mapView.bottomAnchor, constant: Constants.standardMargin),
             populationLabel.leadingAnchor.constraint(equalTo: sunLabel.leadingAnchor),
-            populationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.horizontalMargin),
-            populationLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.horizontalMargin)
+            populationLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -Constants.standardMargin),
+            populationLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -Constants.standardMargin)
         ])
     }
     
